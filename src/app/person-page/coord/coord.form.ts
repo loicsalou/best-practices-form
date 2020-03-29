@@ -1,4 +1,5 @@
-export interface PersonPageForm {
-  civil: CivilForm;
-  coord: CoordForm;
+export interface CoordForm {
+  email: string;
+  phone: string;
+  mobile: string;
 }
