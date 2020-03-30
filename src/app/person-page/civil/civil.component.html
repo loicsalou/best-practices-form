@@ -1,0 +1,20 @@
+<div [formGroup]="formGroup">
+
+  <mat-form-field appearance="outline">
+    <mat-label>Prénom</mat-label>
+    <input formControlName="prenom" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Nom</mat-label>
+    <input formControlName="nom" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" class="activityFromDate" floatLabel="auto">
+    <mat-datepicker-toggle [for]="dtp" matSuffix></mat-datepicker-toggle>
+    <mat-label>Date de naissance</mat-label>
+    <input [matDatepicker]="dtp" formControlName="dateNaissance" matInput placeholder="Date"/>
+    <mat-datepicker #dtp></mat-datepicker>
+  </mat-form-field>
+
+</div>

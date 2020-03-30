@@ -1,0 +1,10 @@
+<div class="person-page-component">
+  <ng-container [formGroup]="form">
+    <app-civil formControlName="civilData"></app-civil>
+    <app-coord formControlName="coordData"></app-coord>
+  </ng-container>
+
+  <ng-container *ngIf="formValue$ | async as formValue">
+    <ngx-json-viewer [json]="formValue"></ngx-json-viewer>
+  </ng-container>
+</div>
