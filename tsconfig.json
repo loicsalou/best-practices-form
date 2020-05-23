@@ -1,8 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": [],
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,

@@ -25,16 +25,22 @@ import localeDe from '@angular/common/locales/de';
 import localeFr from '@angular/common/locales/fr';
 import localeIt from '@angular/common/locales/it';
 import {MAT_MOMENT_DATE_ADAPTER_OPTIONS, MAT_MOMENT_DATE_FORMATS, MomentDateAdapter} from '@angular/material-moment-adapter';
+import {HomepageComponent} from './homepage/homepage.component';
+import {MatButtonModule} from '@angular/material/button';
+import {FormStorageDirective} from './formutils/form.storage.directive';
 
 @NgModule({
             declarations: [
               AppComponent,
               PersonPageComponent,
               CivilComponent,
-              CoordComponent
+              CoordComponent,
+              FormStorageDirective,
+              HomepageComponent
             ],
             imports: [
               BrowserModule,
+              BrowserAnimationsModule,
               ReactiveFormsModule,
               NgxJsonViewerModule,
               AppRoutingModule,
@@ -49,7 +55,8 @@ import {MAT_MOMENT_DATE_ADAPTER_OPTIONS, MAT_MOMENT_DATE_FORMATS, MomentDateAdap
               MatFormFieldModule,
               MatInputModule,
               MatDatepickerModule,
-              MatNativeDateModule
+              MatNativeDateModule,
+              MatButtonModule
             ],
             providers: [
               {provide: HTTP_INTERCEPTORS, useClass: ObHttpApiInterceptor, multi: true},

@@ -1,0 +1,30 @@
+<p>homepage works!</p>
+<div style="margin-bottom: 20px;">
+  <a routerLink="/person">Aller sur la page personne</a>
+</div>
+<button (click)="toggle()" mat-raised-button>Toggle</button>
+
+<div *ngIf="block1; else block2" style="height:100px;width:200px; background:red">
+</div>
+
+<ng-template #block2>
+  <div style="height:200px;width:400px; background:green"></div>
+</ng-template>
+
+<button (click)="fieldToggle=!fieldToggle" style="margin: 20px 0 10px 0">inverser</button>
+<form [formGroup]="formGroup" save="test">
+  <span *ngIf="fieldToggle; else other">
+    <label for="nom">Nom:</label>
+    <input formControlName="nom" id="nom"/>
+  </span>
+  <ng-template #other>
+    <span>
+      <label for="prenom">Prénom:</label>
+      <input formControlName="prenom" id="prenom"/>
+    </span>
+  </ng-template>
+</form>
+<div>
+  <p>La form contient: {{ formGroup.value | json}}</p>
+  <p>la form est {{ formGroup.valid ? 'valide' : 'invalide'}}</p>
+</div>

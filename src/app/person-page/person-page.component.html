@@ -1,7 +1,9 @@
 <div class="person-page-component">
-  <ng-container [formGroup]="form">
-    <app-civil formControlName="civilData"></app-civil>
-    <app-coord formControlName="coordData"></app-coord>
+  <ng-container>
+    <form [formGroup]="form" save="person">
+      <app-civil formControlName="civilData"></app-civil>
+      <app-coord formControlName="coordData"></app-coord>
+    </form>
   </ng-container>
 
   <ng-container *ngIf="formValue$ | async as formValue">

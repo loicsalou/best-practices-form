@@ -3,7 +3,6 @@ import {select, Store} from '@ngrx/store';
 import {State} from '../state';
 import {Selectors} from '../state/get-person.selectors';
 import {distinctUntilChanged, filter, map, takeUntil, tap} from 'rxjs/operators';
-import {PersonActions} from '../state/person.actions';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PersonPageForm} from './person-page.form';
 import {PersonPageMappers} from './person-page.mappers';
@@ -42,7 +41,6 @@ export class PersonPageComponent implements OnInit, OnDestroy {
         this.form.patchValue(formObject);
       }
     );
-    this.store.dispatch(PersonActions.loadPerson());
   }
 
   ngOnDestroy(): void {
